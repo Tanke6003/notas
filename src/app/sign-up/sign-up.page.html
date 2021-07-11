@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>signUp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="signUpForm">
+    <ion-item>
+      <ion-label position="stacked">Nickname</ion-label>
+      <ion-input formControlName="nickName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Correo</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input formControlName="password" type="password" clearOnEdit="false"></ion-input>
+    </ion-item>
+      <ion-button expand="block"(click)="signUp()">
+        Registrarte
+      </ion-button>
+  </form>
+</ion-content>

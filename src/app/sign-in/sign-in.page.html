@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>signIn</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/sign-up']">
+        Ir Registro
+      </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <form [formGroup]="signInForm">
+    <ion-item>
+      <ion-label position="stacked">Correo</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input formControlName="password" type="password" clearOnEdit="false"></ion-input>
+    </ion-item>
+      <ion-button expand="block" (click)="signIn()">
+        Iniciar sesion
+      </ion-button>
+  </form>  
+</ion-content>
