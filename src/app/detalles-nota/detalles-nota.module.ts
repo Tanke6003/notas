@@ -4,18 +4,18 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CreateNotePageRoutingModule } from './create-note-routing.module';
+import { DetallesNotaPageRoutingModule } from './detalles-nota-routing.module';
 
-import { CreateNotePage } from './create-note.page';
+import { DetallesNotaPage } from './detalles-nota.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CreateNotePageRoutingModule,
+    DetallesNotaPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [CreateNotePage]
+  declarations: [DetallesNotaPage]
 })
-export class CreateNotePageModule {}
+export class DetallesNotaPageModule {}

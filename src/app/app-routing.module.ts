@@ -36,6 +36,22 @@ const routes: Routes = [
       auth: true
     }
   },
+  {
+    path: 'detalles-nota/:idNote',
+    loadChildren: () => import('./detalles-nota/detalles-nota.module').then( m => m.DetallesNotaPageModule),
+    canActivate: [AuthGuard],
+    data:{
+      auth: true
+    }
+  },
+  {
+    path: 'edit-note/:idNote',
+    loadChildren: () => import('./edit-note/edit-note.module').then( m => m.EditNotePageModule),
+    canActivate: [AuthGuard],
+    data:{
+      auth: true
+    }
+  },
 
  
 ];

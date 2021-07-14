@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+    <ion-title>detalles-nota</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/update']" color="primary">
+        Editar
+      </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header color="dark">
+      <ul style="list-style: none;padding: 0;margin-top: 0;">
+      <li style="float: left;margin: 0 0 0 0; ">{{title}}</li>
+      <li style="float: right;margin: 0 0 0 0;">{{date | date:"dd/MM/y "}}</li>
+    </ul>
+    </ion-card-header>
+    <ion-card-content >
+        <p style="text-align: center;">{{description}}</p>
+    </ion-card-content>
+  </ion-card > 
+  <ion-button expand="block"(click)="delete()" color="danger">
+    Borrar
+  </ion-button>
+</ion-content>

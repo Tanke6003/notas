@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -8,5 +8,15 @@
 </ion-header>
 
 <ion-content>
-
+    <ion-card *ngFor="let note of notes"[routerLink]="['/detalles-nota/' + note.idNote]" >  
+      <ion-card-header>
+        <ul style="list-style: none;padding: 0;margin-top: 0;">
+          <li style="float: right;margin: 0 0 0 0; "><p style="font-weight: bold;">{{note.date | date:"dd/MM/y"}}</p></li>
+          <li style="float: left;margin: 0 0 0 0; "><p style="font-weight: bold;">{{note.title}}</p></li>
+        </ul>
+      </ion-card-header>
+      <ion-card-content>
+        <p style="text-align: center;">{{note.description}}</p>
+      </ion-card-content>
+    </ion-card>
 </ion-content>

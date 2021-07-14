@@ -39,7 +39,7 @@ export class SignInPage implements OnInit {
     this._SignInService.signIn(form).subscribe((res)=>{
       if(res.status){
       this.signInForm.reset();
-      localStorage.setItem("token" , res.token)
+      localStorage.setItem("token",res.token);
       this.navCtrl.navigateForward('menu/inicio');
       }
       else{

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -8,5 +8,19 @@
 </ion-header>
 
 <ion-content>
-
+  <form [formGroup]="CreateNoteForm">
+    <ion-item>
+      <ion-label position="stacked">titulo</ion-label>
+      <ion-input formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Nota</ion-label>
+      <ion-textarea placeholder="Notas..."  formControlName="description"clearOnEdit="false"auto-grow="true"></ion-textarea>
+    </ion-item>
+  </form>  
 </ion-content>
+<ion-footer>
+  <ion-button expand="block" (click)="save() "color="success">
+    Guardar
+  </ion-button>
+</ion-footer>
