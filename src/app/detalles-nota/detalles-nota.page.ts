@@ -1,6 +1,7 @@
 import { Component, OnInit,ChangeDetectorRef   } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DetallesNotaService } from '../detalles-nota/detalles-nota.service';
+import { NavController } from '@ionic/angular';
 import {
   FormGroup,
   FormControl,
@@ -21,6 +22,7 @@ export class DetallesNotaPage implements OnInit {
   id:number;
   constructor(private activeRoute: ActivatedRoute,
     private _DetallesNotaService: DetallesNotaService,
+    public navCtrl:NavController,
     public Formbuilder : FormBuilder,
     private changeRef: ChangeDetectorRef) { 
      }
@@ -33,8 +35,17 @@ export class DetallesNotaPage implements OnInit {
       this.date = note.date;
       this.title = note.title;
       this.description = note.description;
-      this.idNote = note.idNote;
+      this.idNote;
     })
+  }
+  delete(){
+
+    this._DetallesNotaService.deleteNote({idNote:this.idNote}).subscribe((res)=>{
+
+      this.navCtrl.navigateForward('menu/notes');
+    },(error) =>{
+      console.log(error);
+    });
   }
 
 }

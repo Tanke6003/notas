@@ -5,5 +5,17 @@
 </ion-header>
 
 <ion-content>
-
+  <form [formGroup]="noteForm">
+    <ion-item>
+      <ion-label position="stacked">Titulo</ion-label>
+      <ion-input formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Nota</ion-label>
+      <ion-input formControlName="description"></ion-input>
+    </ion-item>
+      <ion-button (click)="Edit()">
+        Actualizar
+      </ion-button>
+  </form>
 </ion-content>

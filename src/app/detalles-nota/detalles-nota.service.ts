@@ -15,5 +15,8 @@ export class DetallesNotaService {
     showDetallesNota(data): Observable<any> {
         return this._http.post(this.apiEndpoint + 'detalles-nota',data);
     }
+    deleteNote(data): Observable<any> {
+        return this._http.post(this.apiEndpoint + 'detalles-nota/delete',data);
+    }
 
 }

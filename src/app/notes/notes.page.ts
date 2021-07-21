@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesService}       from './notes.service';
+import { Events }            from '../events';
 
 @Component({
   selector: 'app-notes',
@@ -9,14 +10,18 @@ import { NotesService}       from './notes.service';
 })
 export class NotesPage implements OnInit {
   notes : Array<any>;
-  constructor(private _NotesService: NotesService) {
-    
-    this.ShowNotes();
+  constructor(private _NotesService: NotesService,
+    public events: Events) {
+    this.showNotes();
+    this.events.noteChange.subscribe(()=>{
+      this.showNotes();
+    });  
    }
 
   ngOnInit() {
+    
   }
-  ShowNotes(){
+  showNotes(){
     let token = localStorage.getItem("token")
     console.log(token)
     let data ={

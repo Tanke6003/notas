@@ -5,7 +5,7 @@ import { Config } from '../config';
 import { Observable } from "rxjs";
 
 @Injectable()
-export class DetallesNotaService {
+export class EditNoteService {
 
     apiEndpoint: string;
 
@@ -13,6 +13,9 @@ export class DetallesNotaService {
         this.apiEndpoint = this.config.API_MAIN;
     }
     getNote(data): Observable<any> {
-        return this._http.post(this.apiEndpoint + 'edit-note',data);
+        return this._http.post(this.apiEndpoint + 'edit-note/getNote',data);
+    }
+    editNote(data):Observable<any>{
+        return this._http.post(this.apiEndpoint + 'edit-note/editNote',data);
     }
 }

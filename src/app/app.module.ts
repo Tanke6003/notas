@@ -7,13 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { Config } from './config';
 import { Alerts } from './alerts';
+import { Events } from './events'
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },Config,Alerts],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },Config,Alerts,Events],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
